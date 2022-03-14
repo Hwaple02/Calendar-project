@@ -4,18 +4,14 @@ import java.util.Scanner;
 
 public class Calendar {
 	public static void main(String[] args) {
-//입력받은 두 수의 합을 출력하기
-		System.out.println("두 수를 입력하세요.");
+//입력받은 월의 최대 일수 출력하기
+		int[] month = {31,28,31,30,31,30,31,31,30,31,30,31};
+		System.out.println("달을 입력하세요.");
+		Scanner scanner = new Scanner(System.in);
+		String s = scanner.next();
+		int n = Integer.parseInt(s);
 		
-		Scanner s = new Scanner(System.in);
-		String a = s.next();
-		String b = s.next();
-		
-		int i = Integer.parseInt(a);
-		int k = Integer.parseInt(b);
-		
-		//System.out.println("두 수의 합은 " + (i+k) + "입니다.");
-		System.out.printf("%d와 %d의 합은 %d입니다.", i, k, (i+k));
-		s.close();
+		System.out.printf("%d월은 %d일까지 있습니다.", n, month[n-1]);
+
 	}
 }
