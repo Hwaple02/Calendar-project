@@ -1,5 +1,6 @@
 package calendar;
 
+
 import java.util.Scanner;
 
 public class Calendar {
@@ -23,11 +24,25 @@ public class Calendar {
 		
 		cal.printCal();
 		
-		System.out.println("달을 입력하세요.");
+		System.out.println("반복횟수를 입력하세요.");
 		Scanner scanner = new Scanner(System.in);
-		
 		int n = scanner.nextInt();		
-		System.out.printf("%d월은 %d일까지 있습니다.", n, cal.maxDay(n));
-		scanner.close();
+		
+		System.out.println("월을 입력하세요.");
+		
+		int[] mon = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };	
+		
+		for(int i=0; i<n; i++)
+		{
+			mon[i] = scanner.nextInt();
+
+		}
+		for(int i=0; i<n; i++)
+		{
+				
+			System.out.printf("%d월은 %d일까지 있습니다.\n", mon[i], cal.maxDay(mon[i]));
+		}
+		
+		scanner.close();		
 	}
 }
