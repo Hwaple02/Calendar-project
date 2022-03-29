@@ -35,7 +35,8 @@ public class Calendar {
 				System.out.println("Have a nice day!");
 				break;	
 			}
-	
+			if( mon > 12 )
+				continue;
 			System.out.printf("%d월은 %d일까지 있습니다.\n", mon, cal.maxDay(mon));
 		}
 		scanner.close();		
