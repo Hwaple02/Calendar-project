@@ -7,6 +7,11 @@ public class Calendar {
 		System.out.println(" ---------------------");
 		
 		int max = maxDay(month);
+		if( month == 2)
+		{
+			if( year%4 == 0 && year%100 != 0 || (year%400 == 0))
+				max += 1;
+		}
 		
 		for(int i=0; i<max; i++)
 		{
