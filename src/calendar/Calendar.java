@@ -6,12 +6,7 @@ public class Calendar {
 		System.out.println(" SU MO TU WE TH FR SA");
 		System.out.println(" ---------------------");
 		
-		int max = maxDay(month);
-		if( month == 2)
-		{
-			if( year%4 == 0 && year%100 != 0 || (year%400 == 0))
-				max += 1;
-		}
+		int max = maxDay(year, month);
 		
 		for(int i=0; i<max; i++)
 		{
@@ -22,10 +17,23 @@ public class Calendar {
 		System.out.printf("\n");
 	}
 	private static final int[] MAX_DAYS = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+	
+	private static final int[] LEAP_MAX_DAYS = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-	public int maxDay(int month)
+	public boolean isLeapYear(int year)
 	{
-		return MAX_DAYS[month-1];
+		if( year%4 == 0 && (year%100 != 0 || year%400 == 0))
+			return true;
+		else
+			return false;
+	}
+	
+	public int maxDay(int year, int month)
+	{
+		if( isLeapYear(year))
+			return LEAP_MAX_DAYS[month-1];
+		else
+			return MAX_DAYS[month-1];
 	}
 	
 }
